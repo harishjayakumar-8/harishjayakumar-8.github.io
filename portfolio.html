@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harish J | MCA Graduate & Frontend Developer</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Tailwind Configuration (to use our specific colors) */
+        :root {
+            --color-primary: #86A8E7; /* Soft Blue */
+            --color-secondary: #F5F5DC; /* Beige */
+            --color-dark: #2F4F4F; /* Dark Slate Gray for text/accents */
+        }
+
+        .bg-primary { background-color: var(--color-primary); }
+        .text-primary { color: var(--color-primary); }
+        .bg-secondary { background-color: var(--color-secondary); }
+        .text-dark { color: var(--color-dark); }
+        .border-primary { border-color: var(--color-primary); }
+
+        /* Custom scrollbar for better aesthetics */
+        body::-webkit-scrollbar {
+            width: 8px;
+        }
+        body::-webkit-scrollbar-thumb {
+            background-color: var(--color-primary);
+            border-radius: 4px;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #f7f7f0; /* Very light, subtle off-white */
+        }
+        
+        .section-heading {
+            position: relative;
+            display: inline-block;
+        }
+        .section-heading::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 70%;
+            height: 3px;
+            background-color: var(--color-primary);
+            border-radius: 9999px;
+        }
+    </style>
+</head>
+<body class="text-dark">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 shadow-md bg-secondary/95 backdrop-blur-sm">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#home" class="text-4xl font-extrabold text-primary rounded-lg p-2 transition duration-300 hover:bg-primary/10">Harish J</a>
+            <div class="space-x-4 hidden md:flex">
+                <a href="#profile" class="nav-link text-dark hover:text-primary transition duration-200 font-medium bg-primary text-white px-3 py-1 rounded-full shadow-md hover:shadow-lg"">Profile</a>
+                <a href="#skills" class="nav-link text-dark hover:text-primary transition duration-200 font-medium bg-primary text-white px-3 py-1 rounded-full shadow-md hover:shadow-lg"">Skills</a>
+                <a href="#projects" class="nav-link text-dark hover:text-primary transition duration-200 font-medium bg-primary text-white px-3 py-1 rounded-full shadow-md hover:shadow-lg"">Projects</a>
+                <a href="#education" class="nav-link text-dark hover:text-primary transition duration-200 font-medium bg-primary text-white px-3 py-1 rounded-full shadow-md hover:shadow-lg"">Education</a>
+                <a href="#contact" class="nav-link text-dark hover:text-primary transition duration-200 font-medium bg-primary text-white px-3 py-1 rounded-full shadow-md hover:shadow-lg">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-primary/10 transition duration-200">
+                <i data-lucide="menu" class="text-dark"></i>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-secondary/95 backdrop-blur-sm p-4 space-y-2 border-t border-primary/20">
+            <a href="#profile" class="mobile-nav-link block text-dark hover:text-primary font-medium p-2 rounded-lg transition duration-200">Profile</a>
+            <a href="#skills" class="mobile-nav-link block text-dark hover:text-primary font-medium p-2 rounded-lg transition duration-200">Skills</a>
+            <a href="#projects" class="mobile-nav-link block text-dark hover:text-primary font-medium p-2 rounded-lg transition duration-200">Projects</a>
+            <a href="#education" class="mobile-nav-link block text-dark hover:text-primary font-medium p-2 rounded-lg transition duration-200">Education</a>
+            <a href="#contact" class="mobile-nav-link block text-white bg-primary font-medium p-2 rounded-lg text-center transition duration-200 mt-2">Contact</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-20">
+
+        <!-- 1. Hero / Home Section -->
+        <section id="home" class="pt-8 pb-12 sm:pt-16 sm:pb-24 flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-3/5 space-y-6 text-center md:text-left">
+                <p class="text-lg text-primary font-semibold">Hey there, I'm</p>
+                <h1 class="text-5xl sm:text-7xl font-extrabold leading-tight">
+                    <span class="block">Harish J</span>
+                </h1>
+                <h2 class="text-2xl sm:text-3xl font-light text-dark/80">
+                   <span class="text-primary font-medium">Software Developer & Tester</span>
+                </h2>
+                <p class="text-lg text-dark/70 max-w-xl">
+                    Motivated MCA fresher with strong fundamentals in programming and problem-solving. Seeking an entry level role in software development or testing to apply technical skills and grow within the IT industry.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 pt-4 justify-center md:justify-start">
+                    <a href="#projects" class="w-full sm:w-auto px-6 py-3 bg-primary text-white text-center font-semibold rounded-xl shadow-lg hover:bg-primary/90 transition duration-300 transform hover:scale-[1.02]"><i data-lucide="folder-open" class="inline-block w-5 h-5 mr-2"></i>View Projects</a>
+                    <a href="https://drive.google.com/file/d/1vGcrWbDQKia5uaT51C6aea5eOuI0Dgcq/view?usp=sharing" class="w-full sm:w-auto px-6 py-3 border bg-primary text-white border-dark/30 text-dark text-center font-semibold rounded-xl hover:bg-secondary transition duration-300 transform hover:scale-[1.02]">
+                        <i data-lucide="file-down" class="inline-block w-5 h-5 mr-2"></i>
+                        View My Complete Resume
+                    </a>
+                </div>
+            </div>
+            <div class="hidden md:block md:w-2/5 mt-10 md:mt-0 relative">
+    <div class="aspect-square w-full max-w-xs lg:max-w-md mx-auto rounded-full overflow-hidden shadow-2xl">
+        <img 
+             src="profile pic.jpeg" alt="Your Professional Profile Picture" class="w-full h-full object-cover"/>
+            
+    </div>
+</div>
+            </div>
+        </section>
+
+       <section id="profile" class="py-10">
+            <h3 class="text-3xl font-bold mb-8 section-heading">Profile Summary</h3>
+            <div class="bg-white p-8 rounded-2xl shadow-xl border border-primary/20">
+                <p class="text-lg leading-relaxed text-dark">
+                    A motivated MCA graduate with a strong foundation in programming, data structures, and problem solving.Seeking an entry-level role in software development or testing to apply knowledge, enhance abilities, and develop professionally within the IT industry. Gained practical experience in software development and testing through academic projects and internships. Eager to contribute technical skills in a collaborative environment while continuing to learn and grow.
+                </p>
+                <div class="mt-6 grid grid-cols-1 sm:grid-cols-4 gap-4 text-center">
+                    <div class="p-4 bg-white rounded-xl shadow-md">
+    <i data-lucide="mail" class="w-6 h-6 text-primary mx-auto mb-2"></i>
+    <a href="mailto:harishhari0408@gmail.com" class="font-semibold text-sm">
+        harishhari0408@gmail.com
+    </a>
+</div>
+                    <div class="p-4 bg-white rounded-xl shadow-md">
+    <i data-lucide="phone" class="w-6 h-6 text-primary mx-auto mb-2"></i>
+    <a href="tel:+919486495181" class="font-semibold text-sm">
+        +91 9486495181
+    </a>
+</div>
+                    <a href="https://linkedin.com/in/harishjayakumar8" target="_blank" class="p-4 bg-white rounded-xl shadow-md hover:bg-primary/10 transition duration-200">
+                        <i data-lucide="linkedin" class="w-6 h-6 text-primary mx-auto mb-2"></i>
+                        <p class="font-semibold text-sm">LinkedIn Profile</p>
+                    </a>
+                    <a href="https://github.com/harishjayakumar-8" target="_blank" class="p-4 bg-white rounded-xl shadow-md hover:bg-primary/10 transition duration-200">
+                        <i data-lucide="github" class="w-6 h-6 text-primary mx-auto mb-2"></i>
+                        <p class="font-semibold text-sm">GitHub Profile</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Technical Skills Section -->
+        <section id="skills" class="py-10">
+            <h3 class="text-3xl font-bold mb-8 section-heading">Technical & Additional Skills</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Technical Skills -->
+                <div class="p-6 bg-white rounded-2xl shadow-xl border border-primary/20">
+                    <h4 class="text-2xl font-semibold mb-4 text-primary flex items-center"><i data-lucide="cpu" class="w-6 h-6 mr-2"></i> Technical Expertise</h4>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Data Structures & Algorithms</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C++</span>
+                        
+                    </div>
+                    <h4 class="text-2xl font-semibold mt-4 mb-4 text-primary flex items-center"><i data-lucide="handshake" class="w-6 h-6 mr-2"></i> Soft Skills</h4>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-tag">Communication</span>
+                        <span class="skill-tag">Problem-solving</span>
+                        <span class="skill-tag">Adaptability / Flexibility</span>
+                        <span class="skill-tag">Teamwork / Collaboration</span>
+                        <span class="skill-tag">Critical Thinking</span>
+                        <span class="skill-tag">Time Management</span>
+                    </div>
+                </div>
+                
+
+                <!-- Additional Skills & Certifications -->
+                <div class="p-6 bg-white rounded-2xl shadow-xl border border-primary/20">
+                    <h4 class="text-2xl font-semibold mb-4 text-primary flex items-center"><i data-lucide="award" class="w-6 h-6 mr-2"></i></i> Certifications</h4>
+                    <ul class="space-y-3 text-dark/90">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mr-2 mt-1 flex-shrink-0"></i>
+                            <p><strong>Java Enterprise Apps - Digital Transformation Curriculum (2021-2024):</strong> NIIT, Anna Nagar, Chennai.</p>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mr-2 mt-1 flex-shrink-0"></i>
+                            <p><strong>Frontend Developer Internship (2025):</strong> Unified Mentor, Gurgaon, Haryana (Remote).</p>
+                        </li>
+                        <h4 class="text-2xl font-semibold mb-4 text-primary flex items-center"><i data-lucide="laptop" class="w-6 h-6 mr-2"></i> Additional Skills</h4>
+                        <li class="flex items-start">
+                            <i data-lucide="type" class="w-5 h-5 text-dark/70 mr-2 mt-1 flex-shrink-0"></i>
+                            <p><strong>Typewriting:</strong> Certified Senior-level typist (45+ WPM, high accuracy).</p>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="file-text" class="w-5 h-5 text-dark/70 mr-2 mt-1 flex-shrink-0"></i>
+                            <p><strong>MS Office:</strong> Experienced in Word, Excel, and PowerPoint for professional documentation.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Projects Section -->
+        <section id="projects" class="py-10">
+            <h3 class="text-3xl font-bold mb-10 section-heading">Featured Projects</h3>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Project Card 1: DBZ Accessories -->
+                <div class="project-card bg-white rounded-2xl shadow-2xl overflow-hidden group border border-primary/20">
+                    <div class="p-6">
+                        <h4 class="text-2xl font-bold text-primary mb-2">DBZ Accessories (E-commerce)</h4>
+                        <p class="text-dark/80 mb-4">
+                            Developed a responsive e-commerce platform for automobile accessories.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs font-medium px-2 py-1 bg-primary text-white rounded-full">HTML</span>
+                            <span class="text-xs font-medium px-2 py-1 bg-primary text-white rounded-full">CSS</span>
+                            <span class="text-xs font-medium px-2 py-1 bg-primary text-white rounded-full">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="project-overlay bg-white text-blue p-6 pt-0 flex flex-col justify-end">
+                        <h5 class="text-lg text-primary font-semibold mb-2">Key Contributions:</h5>
+                        <ul class="list-disc list-inside text-sm space-y-1">
+                            <li>Developed an e-commerce website for automobile accessories as a final project submission.</li>
+                            <li>Built the front-end using HTML, CSS, and JavaScript, focusing on responsive design and user experience.</li>
+                            <li>Collaborated with a team and contributed specifically to front-end development under the guidance of a mentor.</li>
+                        </ul>
+                        <button onclick="showAlert('DBZ Accessories: Project details are available upon request.')" class="mt-4 px-4 py-2 bg-primary text-white font-semibold border border-white-400 rounded-lg hover:bg-blue-700 transition duration-200 shadow-md">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project Card 2: Personal Portfolio -->
+                <div class="project-card bg-white rounded-2xl shadow-2xl overflow-hidden group border border-primary/20">
+                    <div class="p-6">
+                        <h4 class="text-2xl font-bold text-primary mb-2">Personal Portfolio Website</h4>
+                        <p class="text-dark/80 mb-4">
+                            A dedicated platform to showcase skills, academic projects, and achievements.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs font-medium px-2 py-1 bg-primary text-white rounded-full">HTML</span>
+                            <span class="text-xs font-medium px-2 py-1 bg-primary text-white rounded-full">CSS</span>
+                            <span class="text-xs font-medium px-2 py-1 bg-primary text-white rounded-full">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="project-overlay bg-white text-blue p-6 pt-0 flex flex-col justify-end">
+                        <h5 class="text-lg text-primary font-semibold mb-2">Key Contributions:</h5>
+                        <ul class="list-disc list-inside text-sm space-y-1">
+                            <li>Developed a personal portfolio website to showcase my skills, projects, and achievements.</li>
+                            <li>Designed and built the front-end using HTML, CSS, and JavaScript, making sure it’s responsive and looks good on all devices.</li>
+                            <li>Added interactive elements and smooth navigation to give a better user experience and make the site easy to use.</li>
+                        </ul>
+                        <button onclick="showAlert('Personal Portfolio: This website is the latest iteration of my portfolio project!')" class="mt-4 px-4 py-2 bg-primary text-white font-semibold border border-white-400 rounded-lg hover:bg-blue-700 transition duration-200 shadow-md">
+                            View Details
+
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+               <!-- 5. Education Section -->
+        <section id="education" class="py-10">
+            <h3 class="text-3xl font-bold mb-8 section-heading">Education</h3>
+            <div class="space-y-8 relative pl-6 md:pl-0">
+                <!-- Vertical timeline connector (hidden on mobile, centered on desktop) -->
+                <div class="absolute left-3 md:left-1/2 w-0.5 bg-primary/30 h-full transform -translate-x-1/2 hidden md:block"></div>
+
+                <!-- Education 1: MCA -->
+                <div class="flex flex-col md:flex-row items-center justify-start md:justify-center w-full">
+                    <div class="md:w-1/2 md:text-right md:pr-10">
+                        <p class="text-lg font-bold text-primary">Dr. MGR Educational and Research Institute</p>
+                        <p class="text-sm text-dark/70">Chennai, India</p>
+                    </div>
+                    <!-- Dot -->
+                    <div class="absolute left-0 md:static md:w-auto w-6 h-6 rounded-full bg-primary ring-4 ring-secondary transform md:translate-x-0 -translate-x-3.5 flex-shrink-0"></div>
+                    <div class="md:w-1/2 md:pl-10 md:text-left pt-2 md:pt-0 pl-4 md:pl-0 border-l-4 border-primary/30 md:border-l-0 md:border-r-0">
+                        <div class="bg-white p-6 rounded-xl shadow-lg border border-primary/20 w-full md:w-4/5">
+                            <p class="font-semibold mb-1">Master of Computer Applications (MCA)</p>
+                            <p class="text-sm text-dark/80">2024-present</p>
+                            <p class="text-sm mt-2 text-dark/70">Current CGPA: 7.71 (Upto 1st sem)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education 2: BCA -->
+                <div class="flex flex-col md:flex-row items-center justify-start md:justify-center w-full">
+                    <div class="md:w-1/2 md:pl-10 md:text-right order-2 md:order-1 pt-2 md:pt-0 pl-4 md:pl-0 border-l-4 border-primary/30 md:border-l-0 md:border-r-0">
+                        <div class="bg-white p-6 rounded-xl shadow-lg border border-primary/20 w-full md:w-4/5 md:ml-20">
+                            <p class="font-semibold mb-1">BCA - Digital Technology</p>
+                            <p class="text-sm text-dark/80">2021-2024</p>
+                            <p class="text-sm mt-2 text-dark/70">Final CGPA: 7.0</p>
+                        </div>
+                    </div>
+                    <!-- Dot -->
+                    <div class="absolute left-0 top-[calc(50%+1rem)] md:top-auto md:static md:w-auto w-6 h-6 rounded-full bg-primary ring-4 ring-secondary transform md:translate-x-0 -translate-x-3.5 flex-shrink-0 order-1 md:order-2"></div>
+            
+            <div class="md:w-1/2 md:pl-10 order-3 md:order-3 pt-2 md:pt-0">
+                        <p class="text-lg font-bold text-primary">Dr. MGR Educational and Research Institute</p>
+                        <p class="text-sm text-dark/70">Chennai, India</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Languages Section -->
+        <section id="languages" class="py-10">
+            <h3 class="text-3xl font-bold mb-8 section-heading">Languages</h3>
+            <div class="flex flex-wrap gap-4">
+                <div class="px-6 py-3 bg-white rounded-full shadow-md border border-primary/20 flex items-center"><i data-lucide="languages" class="w-5 h-5 text-blue-600"></i> Tamil (Native)</div>
+                <div class="px-6 py-3 bg-white rounded-full shadow-md border border-primary/20 flex items-center"><i data-lucide="languages" class="w-5 h-5 text-blue-600"></i> English (Fluent)</div>
+                <div class="px-6 py-3 bg-white rounded-full shadow-md border border-primary/20 flex items-center"><i data-lucide="languages" class="w-5 h-5 text-blue-600"></i> Malayalam (Basic)</div>
+            </div>
+        </section>
+
+        <!-- 7. Contact Section -->
+        <section id="contact" class="py-10 text-center">
+    <h3 class="text-4xl font-bold mb-4">Ready to collaborate?</h3>
+    <p class="text-lg text-dark/70 mb-8 max-w-2xl mx-auto">
+        I'm actively seeking entry-level software development or testing roles. Reach out, and let's discuss how my skills can contribute to your team's success.
+    </p>
+    <a href="mailto:harishhari0408@gmail.com" class="px-8 py-4 bg-primary text-white text-xl font-semibold rounded-xl shadow-2xl hover:bg-primary/90 transition duration-300 transform hover:scale-[1.05]">
+        Send Me an Email
+    </a>
+    <div class="mt-8 flex justify-center space-x-6">
+        <a href="https://linkedin.com/in/harishjayakumar8" target="_blank" class="text-dark/80 hover:text-primary transition duration-200">
+            <i data-lucide="linkedin" class="w-8 h-8"></i>
+        </a>
+        <a href="https://github.com/harishjayakumar-8" target="_blank" class="text-dark/80 hover:text-primary transition duration-200">
+            <i data-lucide="github" class="w-8 h-8"></i>
+        </a>
+        <a href="mailto:harishhari0408@gmail.com" class="text-dark/80 hover:text-primary transition duration-200">
+            <i data-lucide="mail" class="w-8 h-8"></i>
+        </a>
+        <a href="tel:+919486495181" class="text-dark/80 hover:text-primary transition duration-200">
+            <i data-lucide="phone" class="w-8 h-8"></i>
+        </a>
+    </div>
+</section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Harish J. Built with HTML, Tailwind CSS, and a touch of Soft Blue.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and Utility -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // 1. Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 2. Custom Alert/Modal Replacement (instead of alert())
+        function showAlert(message) {
+            // Simple display of a message within the fixed header area
+            const messageBox = document.createElement('div');
+            messageBox.innerHTML = `
+                <div id="custom-alert" class="fixed top-0 left-1/2 transform -translate-x-1/2 mt-4 z-[100] p-4 rounded-xl bg-primary text-white shadow-2xl transition duration-500 opacity-0 scale-90">
+                    <div class="flex items-center space-x-2">
+                        <i data-lucide="info" class="w-5 h-5"></i>
+                        <span>${message}</span>
+                        <button onclick="document.getElementById('custom-alert').remove()" class="ml-4 text-white/80 hover:text-white transition duration-200">
+                             <i data-lucide="x" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(messageBox.firstElementChild);
+            lucide.createIcons(); // Re-initialize icons for the new element
+
+            // Animate in
+            setTimeout(() => {
+                const alertElement = document.getElementById('custom-alert');
+                if (alertElement) {
+                    alertElement.classList.remove('opacity-0', 'scale-90');
+                }
+            }, 10);
+
+            // Auto-remove after 5 seconds
+            setTimeout(() => {
+                const alertElement = document.getElementById('custom-alert');
+                if (alertElement) {
+                    alertElement.classList.add('opacity-0', 'scale-90');
+                    setTimeout(() => alertElement.remove(), 500);
+                }
+            }, 5000);
+        }
+
+        // 3. Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId && targetId !== '#') {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+
+    <!-- Custom component style for skills -->
+    <script>
+        // Utility to inject custom skill tag style
+        document.querySelectorAll('.skill-tag').forEach(tag => {
+            tag.classList.add('px-4', 'py-2', 'bg-white', 'text-primary', 'text-sm', 'font-medium', 'rounded-full', 'shadow-sm', 'border', 'border-blue-400', 'border-primary/40', 'transition', 'duration-200', 'hover:bg-primary/20', 'cursor-default');
+        });
+    </script>
+</body>
+</html>
